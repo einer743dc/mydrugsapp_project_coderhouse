@@ -7,6 +7,7 @@ class Country(models.Model):
     name = models.CharField(max_length=100)
 
     class Meta:
+        # app_label = 'drug'
         ordering = ['name']
         verbose_name = 'Country'
         verbose_name_plural = 'Countries'
