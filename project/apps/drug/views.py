@@ -3,7 +3,7 @@ from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
-from drug import models #<< AQUI ESTA EL PROBLEMA
+from drug import models,forms #<< AQUI ESTA EL PROBLEMA
 
 # Create your views here.
 def index(request):
@@ -22,6 +22,7 @@ class DrugDetailView(DetailView):
 # class DrugCreateView:
 class DrugCreateView(CreateView):
     model = models.Drug
+    form_class = forms.DrugForm
     template_name = 'drug/drug_create.html'
     fields = ['name', 'company', 'composition', 'package_qty', 'drugtype', 'restricted', 'stock', 'price']
     success_url = reverse_lazy('drug:drug_list')
