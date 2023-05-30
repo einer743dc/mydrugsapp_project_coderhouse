@@ -15,3 +15,7 @@ python manage.py makemigrations
 python manage.py migrate
 ### 4. run de server
 python manage.py runserver
+### 5. fill in your browser: http://127.0.0.1:8000
+### 6. click on drugs link navbar
+will show you a list of drugs alredy created
+### 7. clicking "Create Drug" button will redirct you a drug creation form

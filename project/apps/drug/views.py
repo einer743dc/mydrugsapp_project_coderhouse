@@ -24,14 +24,12 @@ class DrugCreateView(CreateView):
     model = models.Drug
     form_class = forms.DrugForm
     template_name = 'drug/drug_create.html'
-    fields = ['name', 'company', 'composition', 'package_qty', 'drugtype', 'restricted', 'stock', 'price']
     success_url = reverse_lazy('drug:drug_list')
 
 # class DrugUpdateView:
 class DrugUpdateView(UpdateView):
     model = models.Drug
     template_name = 'drug/drug_update.html'
-    fields = ['name', 'company', 'composition', 'package_qty', 'drugtype', 'restricted', 'stock', 'price']
     success_url = reverse_lazy('drug:drug_list')
 
 # class DrugDeleteView:

@@ -1,1 +1,41 @@
 {% extends 'home/base.html' %}
+
+{% block content %}
+    <div>
+        <table class="table caption-top table-dark table-hover">
+            <caption class="text-center fs-2 text">Drugs List</caption>
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Company</th>
+                <th scope="col">Composition</th>
+                <th scope="col">Package Qty</th>
+                <th scope="col">Drug Type</th>
+                <th scope="col">Restricted</th>
+                <th scope="col">Stock</th>
+                <th scope="col">Price</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for drug in object_list %}
+                <tr>
+                    <th scope="row">{{drug.id}}</th>
+                    <td>{{ drug.name }}</td>
+                    <td>{{ drug.company }}</td>
+                    <td>{{drug.composition}}</td>
+                    <td>{{ drug.package_qty }}</td>
+                    <td>{{ drug.drugtype }}</td>
+                    <td>{{ drug.restricted }}</td>
+                    <td>{{ drug.stock }}</td>
+                    <td>{{ drug.price }}</td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+        <div class="d-flex justify-content-center">
+            <button class="btn btn-dark"><a style="color:white" class="text-decoration-none" href="{% url 'drug:drug_create' %}">Create Drug</a></button>
+        </div>
+    </div>
+{% endblock %}
