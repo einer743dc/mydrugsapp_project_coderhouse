@@ -5,7 +5,7 @@
 <h1>Create Drug</h1>
 <form class="form-group" method="POST">
     {% csrf_token %}
-    {{ form.as_p }}
+    {{ form.as_table }}
     <input class="btn btn-dark" type="submit" value="Create Drug">
 </form>
 </div>
