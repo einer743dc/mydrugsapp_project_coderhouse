@@ -6,6 +6,7 @@
             <caption class="text-center fs-2 text">Drugs List</caption>
             <thead>
             <tr>
+                <th scope="col">Action</th>
                 <th scope="col">ID</th>
                 <th scope="col">Name</th>
                 <th scope="col">Company</th>
@@ -20,6 +21,19 @@
             <tbody>
                 {% for drug in object_list %}
                 <tr>
+                    <th scope="row">
+                        <div class="dropdown">
+                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Select
+                            </a>
+                          
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="{% url 'drug:drug_detail' pk=drug.id %}">Detail</a></li>
+                              <li><a class="dropdown-item" href="{% url 'drug:drug_update' pk=drug.id %}">Update</a></li>
+                              <li><a class="dropdown-item" href="{% url 'drug:drug_delete' pk=drug.id %}">Delete</a></li>
+                            </ul>
+                          </div>
+                    </th>
                     <th scope="row">{{drug.id}}</th>
                     <td>{{ drug.name }}</td>
                     <td>{{ drug.company }}</td>

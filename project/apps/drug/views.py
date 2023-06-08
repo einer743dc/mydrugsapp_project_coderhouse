@@ -29,6 +29,7 @@ class DrugCreateView(CreateView):
 # class DrugUpdateView:
 class DrugUpdateView(UpdateView):
     model = models.Drug
+    form_class = forms.DrugForm
     template_name = 'drug/drug_update.html'
     success_url = reverse_lazy('drug:drug_list')
 
