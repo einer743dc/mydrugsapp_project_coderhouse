@@ -1,5 +1,9 @@
 {% extends 'home/base.html' %}
 
 {% block content %}
-    <h1>Delete View</h1>
+    <h1>Deleting {{ drug.name }}</h1>
+    <form class="form-group" method="POST">
+        {% csrf_token %}
+        <p>Are you sure you want to delete {{ drug.name }}?</p>
+        <input class="btn btn-dark" type="submit" value="Delete Drug">
 {% endblock  %}

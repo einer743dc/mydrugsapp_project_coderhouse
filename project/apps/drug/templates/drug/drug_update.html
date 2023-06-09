@@ -1,5 +1,12 @@
 {% extends 'home/base.html' %}
 
 {% block content %}
-    <h1>Update View</h1>
+    <div class="container d-flex justify-content-center">
+        <form method="POST" style="max-width: 400px; background-color: rgb(213, 213, 213); margin-top: 20px;">
+            <h1>Updating {{ drug.name }}</h1>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input class="btn btn-dark" type="submit" value="Update Drug">
+        </form>
+    </div>
 {% endblock  %}
