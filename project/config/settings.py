@@ -143,4 +143,4 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # REDICT VARS FOR LOGIN AND LOGOUT  
 LOGIN_REDIRECT_URL = 'home:index'
-LOGOUT_REDIRECT_URL = 'home:index'
+#LOGOUT_REDIRECT_URL = 'home:index'
