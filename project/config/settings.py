@@ -36,6 +36,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    "crispy_forms",
+    "crispy_bootstrap5",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -44,9 +46,14 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 ]
 
+# Crispy forms global settings
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+
 # Own apps
 INSTALLED_APPS += [
     'home',
+    'login',
     'drug',
 ]
 
@@ -133,3 +140,7 @@ STATICFILES_DIRS = [BASE_DIR / "apps/home/static"]
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# REDICT VARS FOR LOGIN AND LOGOUT  
+LOGIN_REDIRECT_URL = 'home:index'
+LOGOUT_REDIRECT_URL = 'home:index'
