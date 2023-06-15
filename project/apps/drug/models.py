@@ -53,6 +53,7 @@ class Drug(models.Model):
     restricted = models.BooleanField(default=False)
     stock = models.IntegerField()
     price = models.IntegerField()
+    drug_picture = models.ImageField(null=True, blank=True, upload_to='media/')
     
     class Meta:
         ordering = ['name']

@@ -9,6 +9,7 @@
       <div class="col-md-8">
         <div class="card-body">
           <h5 class="card-title"><h3>{{ drug.name }}</h3></h5>
+          <img src="{{ drug.drug_picture.url }}" class="card-img-top" alt="...">
           <p class="card-text"><strong>Composition: </strong>{{ drug.composition }}</p>
           <p class="card-text"><strong>Company: </strong>{{ drug.company }}</p>
           <p class="card-text"><strong>Price: </strong>{{ drug.price }}</p>

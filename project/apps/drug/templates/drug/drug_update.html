@@ -2,7 +2,7 @@
 
 {% block content %}
     <div class="container d-flex justify-content-center">
-        <form method="POST" style="max-width: 400px; background-color: rgb(213, 213, 213); margin-top: 20px;">
+        <form method="POST" enctype="multipart/form-data" style="max-width: 400px; background-color: rgb(213, 213, 213); margin-top: 20px;">
             <h1>Updating {{ drug.name }}</h1>
             {% csrf_token %}
             {{ form.as_p }}

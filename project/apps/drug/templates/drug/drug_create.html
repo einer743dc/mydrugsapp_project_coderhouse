@@ -3,7 +3,7 @@
 {% block content %}
 <div style='background-color: #818181; color: white;' class="container my-5">
 <h1>Create Drug</h1>
-<form class="form-group" method="POST">
+<form class="form-group" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_table }}
     <input class="btn btn-dark" type="submit" value="Create Drug">
